@@ -3,7 +3,7 @@
 # an entry in the dictionary array in a hash.
 def substrings(words, valid_substrings)
   return_hash = Hash.new
-  words.split(/[\s.,!?]/).each do |string_word|
+  words.downcase.split(/[\s.,!?]/).each do |string_word|
     valid_substrings.each do |valid_word|
       if string_word.include? valid_word
         return_hash[valid_word] = return_hash.fetch(valid_word, 0) + 1
